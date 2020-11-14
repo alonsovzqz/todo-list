@@ -1,42 +1,40 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-class AddTodo extends Component {
-  state = {
+const AddTodo = (props) => {
+  const [title, setTitle] = useState({
     title: "",
-  };
+  });
 
-  inputChangeHandler = (e) =>
-    this.setState({ [e.target.name]: e.target.value });
+  const inputChangeHandler = (e) =>
+    setTitle({ [e.target.name]: e.target.value });
 
-  onSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    this.props.addTodo(this.state.title);
+    props.addTodo(title.title);
 
-    this.setState({ title: "" });
+    setTitle({ title: "" });
   };
 
-  render() {
-    return (
-      <form onSubmit={this.onSubmit} style={{ display: "flex" }}>
-        <input
-          type="text"
-          name="title"
-          style={{ flex: "10", padding: "5px" }}
-          placeholder="Add Todo..."
-          value={this.state.title}
-          onChange={this.inputChangeHandler}
-        />
-        <input
-          type="submit"
-          value="submit"
-          className="btn"
-          style={{ flex: "1" }}
-        />
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={onSubmit} style={{ display: "flex" }}>
+      <input
+        type="text"
+        name="title"
+        style={{ flex: "10", padding: "5px" }}
+        placeholder="Add Todo..."
+        value={title.title}
+        onChange={inputChangeHandler}
+      />
+      <input
+        type="submit"
+        value="submit"
+        className="btn"
+        style={{ flex: "1" }}
+      />
+    </form>
+  );
+};
 
 AddTodo.propTypes = {
   addTodo: PropTypes.func.isRequired,
