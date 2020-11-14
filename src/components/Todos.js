@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import TodoItem from "./TodoItem";
 
 const Todos = (props) => {
-  return props.todos.todos.map((todo) => (
+  return props.todos.map((todo) => (
     <TodoItem
       key={todo.id}
       todo={todo}

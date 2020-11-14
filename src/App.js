@@ -11,26 +11,24 @@ import Todos from "./components/Todos";
 import "./App.css";
 
 const App = () => {
-  const [todos, setTodos] = useState({
-    todos: [],
-  });
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/todos?_limit=10")
-      .then((res) => setTodos({ todos: res.data }));
+      .then((res) => setTodos(res.data));
   }, []);
 
   // Toggle complete Todo
   const markComplete = (id) => {
-    setTodos({
-      todos: todos.todos.map((todo) => {
+    setTodos(
+      todos.map((todo) => {
         if (todo.id === id) {
           todo.completed = !todo.completed;
         }
         return todo;
-      }),
-    });
+      })
+    );
   };
 
   // Delete Todo
@@ -38,9 +36,7 @@ const App = () => {
     axios
       .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
       .then((res) =>
-        setTodos({
-          todos: [...todos.todos.filter((todo) => todo.id !== id)],
-        })
+        setTodos([...todos.todos.filter((todo) => todo.id !== id)])
       );
   };
 
@@ -51,7 +47,7 @@ const App = () => {
         title,
         completed: false,
       })
-      .then((res) => setTodos({ todos: [...todos.todos, res.data] }));
+      .then((res) => setTodos([...todos, res.data]));
   };
 
   return (

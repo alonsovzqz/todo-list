@@ -2,18 +2,16 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const AddTodo = (props) => {
-  const [title, setTitle] = useState({
-    title: "",
-  });
+  const [title, setTitle] = useState("");
 
   const inputChangeHandler = (e) =>
-    setTitle({ [e.target.name]: e.target.value });
+    setTitle(e.target.value);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    props.addTodo(title.title);
+    props.addTodo(title);
 
-    setTitle({ title: "" });
+    setTitle("");
   };
 
   return (
@@ -23,7 +21,7 @@ const AddTodo = (props) => {
         name="title"
         style={{ flex: "10", padding: "5px" }}
         placeholder="Add Todo..."
-        value={title.title}
+        value={title}
         onChange={inputChangeHandler}
       />
       <input
