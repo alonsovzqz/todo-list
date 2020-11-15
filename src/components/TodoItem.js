@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import "./TodoItem.css";
@@ -6,14 +6,11 @@ import "./TodoItem.css";
 const TodoItem = (props) => {
   const { id, title, completed } = props.todo;
   return (
-    <div class={`todo-item ${completed && "completed"}`}>
+    <div className={`todo-item ${completed && "completed"}`}>
       <p>
-        <input
-          type="checkbox"
-          onChange={props.markComplete.bind(this, id)}
-        />{" "}
+        <input type="checkbox" onChange={() => props.markComplete(id)} />{" "}
         {title}
-        <button class="btn-item" onClick={props.delTodo.bind(this, id)}>
+        <button className="btn-item" onClick={() => props.delTodo(id)}>
           &times;
         </button>
       </p>
