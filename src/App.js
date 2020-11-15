@@ -37,7 +37,7 @@ const App = () => {
     axios
       .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
       .then((res) =>
-        setTodos([...todos.todos.filter((todo) => todo.id !== id)])
+        setTodos([...todos.filter((todo) => todo.id !== id)])
       );
   };
 
