@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
 
 import About from "./components/pages/About";
 import Header from "./components/layout/Header";
@@ -45,7 +44,6 @@ const App = () => {
   const addTodo = (title) => {
     axios
       .post("https://jsonplaceholder.typicode.com/todos", {
-        id: uuidv4(),
         title,
         completed: false,
       })
