@@ -8,6 +8,8 @@ import Header from "./components/layout/Header";
 import AddTodo from "./components/AddTodo";
 import Todos from "./components/Todos";
 
+import Tabs from "./components/Tabs";
+
 import "./App.css";
 
 const App = () => {
@@ -35,9 +37,7 @@ const App = () => {
   const delTodo = (id) => {
     axios
       .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-      .then((res) =>
-        setTodos([...todos.filter((todo) => todo.id !== id)])
-      );
+      .then((res) => setTodos([...todos.filter((todo) => todo.id !== id)]));
   };
 
   // Add Todo
@@ -66,6 +66,20 @@ const App = () => {
                   markComplete={markComplete}
                   delTodo={delTodo}
                 />
+                <div>
+                  <h1>Tabs Demo</h1>
+                  <Tabs>
+                    <div label="Gator">
+                      See ya later, <em>Alligator</em>!
+                    </div>
+                    <div label="Croc">
+                      After 'while, <em>Crocodile</em>!
+                    </div>
+                    <div label="Sarcosuchus">
+                      Nothing to see here, this tab is <em>extinct</em>!
+                    </div>
+                  </Tabs>
+                </div>
               </React.Fragment>
             )}
           />
