@@ -1,12 +1,11 @@
 .todo-item {
-  background: #f4f4f4;
   padding: 10px;
-  border-bottom: 1px #ccc dotted;
   text-decoration: none;
 }
 
 .todo-item.completed {
     text-decoration: line-through;
+    color: var(--very-light-color);
 }
 
 .btn-item {

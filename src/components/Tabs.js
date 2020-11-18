@@ -12,13 +12,14 @@ const Tabs = (props) => {
     <div className="tabs">
       <ol className="tab-list">
         {props.children.map((child, index) => {
-          const { label } = child.props;
+          const { label, icon } = child.props;
 
           return (
             <Tab
               activeTab={activeTab}
               key={index}
               label={label}
+              icon={icon}
               onClick={() => onClickTabItem(label)}
             />
           );

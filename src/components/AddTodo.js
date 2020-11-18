@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+import "./AddTodo.css";
+
 const AddTodo = (props) => {
   const [title, setTitle] = useState("");
 
@@ -15,20 +17,18 @@ const AddTodo = (props) => {
   };
 
   return (
-    <form onSubmit={onSubmit} style={{ display: "flex" }}>
+    <form className="add-todo" onSubmit={onSubmit}>
       <input
         type="text"
         name="title"
-        style={{ flex: "10", padding: "5px" }}
-        placeholder="Add Todo..."
+        placeholder="Something to finish..."
         value={title}
         onChange={inputChangeHandler}
       />
       <input
         type="submit"
-        value="submit"
-        className="btn"
-        style={{ flex: "1" }}
+        value="Add"
+        className="btn btn-blue"
       />
     </form>
   );

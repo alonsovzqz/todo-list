@@ -1,0 +1,13 @@
+form {
+    display: flex;
+}
+
+.add-todo input[type="text"] {
+    flex: 1 0;
+    border: 1px solid var(--very-light-color);
+    padding: 5px;
+    border-radius: .25rem;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}

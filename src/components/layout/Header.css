@@ -1,0 +1,12 @@
+header {
+    display: flex;
+    padding: 0 1em;
+    color: #ffffff;
+    background-image: linear-gradient(to right, pink, var(--purple-color));
+}
+
+header img {
+    align-self: center;
+    width: 32px;
+    height: 32px;
+}

@@ -10,6 +10,9 @@ import Todos from "./components/Todos";
 
 import Tabs from "./components/Tabs";
 
+import listTaskIcon from "../node_modules/bootstrap-icons/icons/list-task.svg";
+import listTaskCompletedIcon from "../node_modules/bootstrap-icons/icons/calendar-check.svg";
+
 import "./App.css";
 
 const App = () => {
@@ -53,38 +56,17 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <div className="container">
+        <React.Fragment>
           <Header />
-          <Route
-            exact
-            path="/"
-            render={(props) => (
-              <React.Fragment>
-                <AddTodo addTodo={addTodo} />
-                <Todos
-                  todos={todos}
-                  markComplete={markComplete}
-                  delTodo={delTodo}
-                />
-                <div>
-                  <h1>Tabs Demo</h1>
-                  <Tabs>
-                    <div label="Gator">
-                      See ya later, <em>Alligator</em>!
-                    </div>
-                    <div label="Croc">
-                      After 'while, <em>Crocodile</em>!
-                    </div>
-                    <div label="Sarcosuchus">
-                      Nothing to see here, this tab is <em>extinct</em>!
-                    </div>
-                  </Tabs>
-                </div>
-              </React.Fragment>
-            )}
-          />
-          <Route path="/about" component={About} />
-        </div>
+          <div className="container">
+            <AddTodo addTodo={addTodo} />
+            <Todos
+              todos={todos}
+              markComplete={markComplete}
+              delTodo={delTodo}
+            />
+          </div>
+        </React.Fragment>
       </div>
     </Router>
   );

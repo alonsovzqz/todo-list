@@ -1,7 +1,7 @@
 import React from "react";
 
 const Tab = (props) => {
-  const { activeTab, label, onClick } = props;
+  const { activeTab, label, icon, onClick } = props;
 
   return (
     <li
@@ -10,6 +10,7 @@ const Tab = (props) => {
       }`}
       onClick={onClick}
     >
+      {icon && <img src={icon} alt={`${label} Icon`} width="16" height="16" />}{" "}
       {label}
     </li>
   );

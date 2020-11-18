@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "./Header.css";
+
+import burgerMenuIcon from "../../../node_modules/bootstrap-icons/icons/list.svg";
+
 const Header = () => {
   return (
-    <header style={headerStyle}>
-      <h1>TODO app</h1>
-      <Link style={linkStyle} to="/">
+    <header>
+      <img src={burgerMenuIcon} alt="Menu" />
+      <h1>TODO</h1>
+      {/* <Link style={linkStyle} to="/">
         Home
       </Link>{" "}
       |{" "}
       <Link style={linkStyle} to="/about">
         About
-      </Link>
+      </Link> */}
     </header>
   );
 };
