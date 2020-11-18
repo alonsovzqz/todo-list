@@ -1,13 +1,15 @@
-form {
+.add-todo {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--light-color);
+    padding: 2em 1em;
+    border-radius: 3px;
+    margin-bottom: 20px;
 }
 
 .add-todo input[type="text"] {
-    flex: 1 0;
     border: 1px solid var(--very-light-color);
     padding: 5px;
-    border-radius: .25rem;
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    margin-bottom: 15px;
 }

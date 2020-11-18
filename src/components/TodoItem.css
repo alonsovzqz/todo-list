@@ -1,10 +1,10 @@
 .todo-item-container {
-  display: block;
+  display: flex;
   position: relative;
-  padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
+  width: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -34,10 +34,6 @@
   border-color: var(--very-light-color);
 }
 
-.todo-item-container input:checked ~ .checkmark {
-  /* background-color: var(--blue-color); */
-}
-
 .checkmark::after {
   content: "";
   position: absolute;
@@ -53,9 +49,13 @@
   top: -7px;
   width: 24px;
   height: 24px;
-  background-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'><path fill-rule='evenodd' d='M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z'></path></svg>");
+  background-image: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236f42c1'><path fill-rule='evenodd' stroke='%236f42c1' stroke-width='1' d='M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z'></path></svg>");
   background-repeat: no-repeat;
   background-size: 24px 24px;
+}
+
+.todo-item-container .checkbox-container {
+  margin-right: 35px;
 }
 
 .todo-item.completed {

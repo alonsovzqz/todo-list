@@ -4,6 +4,7 @@
   --base-color: #333;
   --purple-color: #6f42c1;
   --blue-color: #007bff;
+  --blue-hover-color: #0062cc;
   --light-color: #f8f9fa;
   --dark-light-color: #6c757d;
   --very-dark-color: #343a40;
@@ -37,8 +38,6 @@ a {
   color: #fff;
   padding: 5px 10px;
   cursor: pointer;
-  border-top-right-radius: .25rem;
-  border-bottom-right-radius: .25rem;
 }
 
 .btn-blue {
@@ -48,4 +47,8 @@ a {
 
 .btn:hover {
   background: #666;
+}
+
+.btn-blue:hover {
+  background: var(--blue-hover-color);
 }

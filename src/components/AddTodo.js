@@ -21,7 +21,7 @@ const AddTodo = (props) => {
       <input
         type="text"
         name="title"
-        placeholder="Something to finish..."
+        placeholder="What do you need to do?"
         value={title}
         onChange={inputChangeHandler}
       />
