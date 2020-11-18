@@ -7,13 +7,15 @@ const TodoItem = (props) => {
   const { id, title, completed } = props.todo;
   return (
     <div className={`todo-item ${completed && "completed"}`}>
-      <p>
-        <input type="checkbox" onChange={() => props.markComplete(id)} />{" "}
+      <label className="todo-item-container">
+        {" "}
         {title}
-        <button className="btn-item" onClick={() => props.delTodo(id)}>
-          &times;
-        </button>
-      </p>
+        <input type="checkbox" checked={completed} onChange={() => props.markComplete(id)} />
+        <span className="checkmark"></span>
+      </label>
+      {/* <button className="btn-item" onClick={() => props.delTodo(id)}>
+        &times;
+      </button> */}
     </div>
   );
 };
