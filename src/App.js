@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import axios from "axios";
 
-import About from "./components/pages/About";
 import Header from "./components/layout/Header";
 import AddTodo from "./components/AddTodo";
 import Todos from "./components/Todos";
@@ -60,11 +59,23 @@ const App = () => {
           <Header />
           <div className="container">
             <AddTodo addTodo={addTodo} />
-            <Todos
-              todos={todos}
-              markComplete={markComplete}
-              delTodo={delTodo}
-            />
+            <Tabs>
+              <div label="All" icon={listTaskIcon}>
+                <Todos
+                  todos={todos}
+                  markComplete={markComplete}
+                  delTodo={delTodo}
+                />
+              </div>
+              <div label="Completed" icon={listTaskCompletedIcon}>
+                
+                <Todos
+                  todos={todos.filter((todo) => todo.completed)}
+                  markComplete={markComplete}
+                  delTodo={delTodo}
+                />
+              </div>
+            </Tabs>
           </div>
         </React.Fragment>
       </div>
